@@ -12,7 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:5174", "http://127.0.0.1:5174"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -108,7 +108,7 @@ npm install
 npm run dev
 ```
 
-The frontend will run on `http://localhost:5173` and communicate with the backend on `http://localhost:8000`.
+The frontend will run on `http://localhost:5174` and communicate with the backend on `http://localhost:8000`.
 
 ## Notes
 
@@ -120,4 +120,4 @@ The frontend will run on `http://localhost:5173` and communicate with the backen
 
 4. **Mock Data**: Some components still use mock data for detailed analytics since the backend doesn't provide this data yet. These can be updated once the backend provides the full analytics data.
 
-5. **CORS**: The backend is configured to allow requests from the frontend development server on port 5173. Update the origins for production deployment. 
+5. **CORS**: The backend is configured to allow requests from the frontend development server on ports 5173 and 5174. Update the origins for production deployment. 
