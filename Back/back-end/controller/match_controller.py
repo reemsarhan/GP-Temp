@@ -16,8 +16,7 @@ router = APIRouter()
 def get_upload(user: User = Depends(is_auth)):
     video_id = bson.ObjectId()
     upload_url = generate_upload_url(video_id)
-    return {"upload-url": upload_url,
-            "video_id": video_id}
+    return {"upload_url": upload_url, "video_id": str(video_id)}
 
 
 @router.post("/update-status", responses={

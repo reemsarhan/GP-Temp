@@ -20,7 +20,11 @@ def generate_upload_url(object_key, expiration=3600):
     s3_client = get_s3_client()
     response = s3_client.generate_presigned_url(
         'put_object',
-        Params={'Bucket': settings.aws_s3_videos_bucket, 'Key': str(object_key)},
+        Params={
+            'Bucket': settings.aws_s3_videos_bucket, 
+            'Key': str(object_key),
+            'ContentType': 'video/mp4'  # Set a default content type
+        },
         ExpiresIn=expiration
     )
     return response

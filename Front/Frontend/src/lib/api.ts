@@ -177,7 +177,8 @@ class ApiClient {
       });
 
       xhr.open('PUT', uploadUrl);
-      xhr.setRequestHeader('Content-Type', file.type);
+      // Set minimal headers for S3 upload
+      xhr.setRequestHeader('Content-Type', 'video/mp4');
       xhr.send(file);
     });
   }

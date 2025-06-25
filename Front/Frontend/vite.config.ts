@@ -6,6 +6,10 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react()],
   base: "./",
+  server: {
+    port: 5173,
+    strictPort: true, // Vite will fail if 5173 is not available
+  },
   css: {
     postcss: {
       plugins: [tailwind],
